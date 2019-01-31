@@ -27,8 +27,10 @@ colorback=(189,174,158)
 colorblank=(205,193,180)
 colorlight=(249,246,242)
 colordark=(119,110,101)
+#создание оттенков цветов
 
 fontSize=[100,85,70,55,40]
+#установка размеров шрифта
 
 dictcolor1={
 0:colorblank,
@@ -65,6 +67,7 @@ UP = 'up'
 DOWN = 'down'
 LEFT = 'left'
 RIGHT = 'right'
+#назначение направлений
 
 TABLE=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 
@@ -85,6 +88,7 @@ def main():
 
 
 def createButton(text, x, y, width, height, action=None):
+    #создание функции для создания кнопок
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
     if x+width > mouse[0] > x and y+height > mouse[1] > y:
@@ -114,7 +118,6 @@ def showStartScreen():
         screen.blit(display_rect, rectangle)
 
         createButton("NEW GAME", 80, 180, 480, 80, newGame)
-        createButton("HIGHSCORE", 80, 340, 480, 80, leaderboard)
         createButton("QUIT", 80, 500, 480, 80, terminate)
 
         if checkForKeyPress():
